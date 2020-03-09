@@ -1,0 +1,43 @@
+{
+  "name": "giselle-trithip-web-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "bulma": "^0.8.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "3.4.0",
+    "styled-components": "^5.0.1"
+  },
+  "scripts": {
+    "start": "env-cmd react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "del": "del /q ..\\giselletrithip.github.io\\ && for /D %d in (..\\giselletrithip.github.io\\*) do if '%d' neq '..\\giselletrithip.github.io\\.git' rd /s /q %d",
+    "copy": "npm run del && xcopy .\\build ..\\giselletrithip.github.io\\ /E /Q /Y",
+    "deploy-github": "echo do 'npm run copy' and 'goto gh-page folder then do git push'",
+    "deploy-firebase": "firebase deploy"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
+  }
+}
